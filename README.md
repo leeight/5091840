@@ -191,6 +191,49 @@ npm run build
 npm run dev
 ```
 
+## Testing
+
+The ACE framework includes comprehensive unit and integration tests.
+
+### Run All Tests
+
+```bash
+npm test
+```
+
+### Run Unit Tests Only
+
+```bash
+npm run test:unit
+```
+
+### Run Integration Tests (requires API key)
+
+```bash
+export ANTHROPIC_API_KEY=your_api_key_here
+npm run test:integration
+```
+
+### Generate Coverage Report
+
+```bash
+npm run test:coverage
+```
+
+### Test Structure
+
+- **Unit Tests** (`tests/unit/`): Test individual components in isolation
+  - PlaybookManager tests
+  - Curator tests
+  - Fast execution, no API calls required
+
+- **Integration Tests** (`tests/integration/`): Test complete workflows
+  - End-to-end ACE processing
+  - Real API calls (requires ANTHROPIC_API_KEY)
+  - Validates entire pipeline
+
+For detailed testing information, see [TESTING.md](./TESTING.md).
+
 ## Configuration Options
 
 ### ACEConfig
