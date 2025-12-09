@@ -267,13 +267,13 @@ describe('ACE Integration Tests', () => {
       await expect(badAce.processTask(task)).rejects.toThrow();
     });
 
-    it('should handle empty task query', async () => {
+    it.skipIf(!hasApiKey)('should handle empty task query', async () => {
       const task = createTestTask('');
 
       // Should not throw, but may produce empty results
       const result = await ace.processTask(task);
       expect(result).toBeDefined();
-    });
+    }, 30000);
   });
 
   describe('Configuration Options', () => {

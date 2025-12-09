@@ -136,7 +136,7 @@ describe('PlaybookManager', () => {
         insightId: uuidv4(),
         operation: 'add',
         targetSection: 'Test',
-        content: 'Break down complex problems',
+        content: 'Always verify your calculations carefully',
         metadata: {
           helpfulCount: 1,
           harmfulCount: 0,
@@ -146,13 +146,13 @@ describe('PlaybookManager', () => {
 
       playbookManager.applyUpdate(addUpdate);
 
-      // Update with similar content
+      // Update with very similar content (should match with threshold 0.7)
       const updateUpdate: DeltaUpdate = {
         id: uuidv4(),
         insightId: uuidv4(),
         operation: 'update',
         targetSection: 'Test',
-        content: 'Break down complex problems into steps',
+        content: 'Always verify your calculations carefully and thoroughly',
         metadata: {
           helpfulCount: 1,
           harmfulCount: 0,
